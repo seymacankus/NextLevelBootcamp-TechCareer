@@ -1,0 +1,83 @@
+﻿@model EmployeeViewModel
+
+<h4 class="mt-5">Create Employee</h4>
+<hr />
+<form asp-area=""
+      asp-controller="Home"
+      asp-action="CreateEmployee"
+      method="post">
+    <div class="row">
+        <div class="col-5">
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="FirstName"></label>
+                        <input class="form-control" asp-for="FirstName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="LastName"></label>
+                        <input class="form-control" asp-for="LastName">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="Address"></label>
+                        <input class="form-control" asp-for="Address">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="City"></label>
+                        <input class="form-control" asp-for="City">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="Region"></label>
+                        <input class="form-control" asp-for="Region">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="PostalCode"></label>
+                        <input class="form-control" asp-for="PostalCode">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="Country"></label>
+                        <input class="form-control" asp-for="Country">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fs-6" asp-for="HomePhone"></label>
+                        <input class="form-control" asp-for="HomePhone">
+                    </div>
+                </div>
+
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-sm">Create Employee</button>
+        </div>
+        <div class="col-6 ms-4">
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="Title"></label>
+                <input class="form-control" asp-for="Title">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="TitleOfCourtesy"></label>
+                <input class="form-control" asp-for="TitleOfCourtesy">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="BirthDate"></label>
+                <input class="form-control" asp-for="BirthDate">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="HireDate"></label>
+                <input class="form-control" asp-for="HireDate">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="Extension"></label>
+                <input class="form-control" asp-for="Extension">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="Notes"></label>
+                <input class="form-control" asp-for="Notes">
+            </div>
+            <div class="mb-3">
+                <label class="form-label fs-6" asp-for="ReportsTo"></label>
+                <input class="form-control" asp-for="ReportsTo">
+            </div>
+        </div>
+    </div>
+
+</form>

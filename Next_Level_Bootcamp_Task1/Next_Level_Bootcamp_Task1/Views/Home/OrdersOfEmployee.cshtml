@@ -1,0 +1,44 @@
+﻿@model List<Order>
+@{
+    var employee = ViewBag.Employee;
+}
+
+<div class="text-center">
+    <h1 class="display-4">@employee.FirstName @employee.LastName Orders</h1>
+    <div class="table-responsive p-0">
+        <table class="table align-items-center mb-0">
+            <thead>
+                <tr>
+                    <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Order ID</th>
+                    <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Order Date</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var order in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">@order.OrderId</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">@(order.OrderDate)</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">@order.ShipCountry</span>
+                        </td>
+                        
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model List<Employee>
+
+<div class="text-center">
+    <div class="row">
+        <div class="col-7">
+            <h1 class="display-4 text-end">Employees</h1>
+        </div>
+        <div class="col-3">
+        </div>
+        <div class="col-2">
+            <a asp-controller="Home"
+               asp-action="CreateEmployee"
+               asp-route-id=""
+               class="btn btn-primary btn-sm font-weight-bold text-xs m-0 justify-content-end" data-toggle="tooltip">
+                Create Employee
+            </a>
+        </div>
+    </div>
+
+    <div class="table-responsive p-0">
+        <table class="table align-items-center mb-0">
+            <thead>
+                <tr>
+                    <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name</th>
+                    <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Last Name</th>
+                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-3">Title</th>
+                    <th class="text-start text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var employee in Model)
+                {
+                    <tr>
+                        <td>
+                            <div class="d-flex py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">@employee.FirstName</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="d-flex px-2 py-1">
+                                <div class="d-flex flex-column justify-content-center">
+                                    <h6 class="mb-0 text-sm">@employee.LastName</h6>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="align-middle text-center">
+                            <span class="text-secondary text-xs font-weight-bold">@employee.Title</span>
+                        </td>
+                        <td class="text-center">
+                            <a
+                           asp-controller="Home"
+                           asp-action="ShowOrders"
+                           asp-route-id="@employee.EmployeeId"
+                               class="btn btn-primary btn-sm font-weight-bold text-xs m-0" data-toggle="tooltip">
+                                Orders
+                            </a>
+                            
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
